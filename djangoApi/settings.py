@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-uvukw89i6o%8bdgutk781$=s4h)6#%7zd&tgjl_2z$7+_pjhx_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['apistockmarket.herokuapp.com','localhost']
+ALLOWED_HOSTS = ['frozen-mesa-16035.herokuapp.com']
 
 
 # Application definition
