@@ -142,5 +142,6 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True
+DISABLE_COLLECTSTATIC=1
 
 django_heroku.settings(locals())
