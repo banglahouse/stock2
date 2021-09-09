@@ -28,7 +28,7 @@ class articleApiSerializers(serializers.HyperlinkedModelSerializer):
 
 class optionsApiSerializers(serializers.ModelSerializer):
      class Meta:
-         model = options
+         model = optionsStocks
          fields = '__all__'
 
 class investmentsApiSerializers(serializers.ModelSerializer):
