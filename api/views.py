@@ -9,7 +9,7 @@ from .serializers import articleApiSerializers, stockApiSerializers,optionsApiSe
 from django.utils.html import escape
 
 @api_view(['GET'])
-def getInvestment (request):
+def getInvestments (request):
     investment = investments.objects.all().order_by('-timeStamp')
     serializer = investmentsApiSerializers(investment, many= True)
     return Response(serializer.data)
@@ -30,7 +30,7 @@ def getOptions (request):
     return Response(serializer.data)
 
 @api_view(['GET'])
-def getOptions (request, pk):
+def getOption (request, pk):
     optionsSingle = optionsStocks.objects.get(id=pk)
     serializer = stockApiSerializers(optionsSingle, many= False)
     return Response(serializer.data)
