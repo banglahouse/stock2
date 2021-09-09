@@ -7,8 +7,12 @@ from django.conf.urls.static import static
 urlpatterns = [
 
     path('stocks/', views.getStocks),
-     path('stocks/<str:pk>', views.getStock),
-     path('articles/', views.getArticles),
-       path('articles/<str:pk>', views.getArticles),
+    path('stocks/<str:pk>', views.getStock),
+    path('articles/', views.getArticles),
+    path('articles/<str:pk>', views.getArticles),
+    path('options/', views.getOptions),
+    path('options/<str:pk>', views.getOptions),
+    path('investment/', views.getInvestment),
+    path('investment/<str:pk>', views.getInvestment),
 
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

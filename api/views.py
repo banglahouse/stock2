@@ -4,11 +4,37 @@ from django.http import HttpResponse
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from . import serializers
-from .models import stock, articles
-from .serializers import articleApiSerializers, stockApiSerializers
+from .models import stock, articles,optionsStocks,investments
+from .serializers import articleApiSerializers, stockApiSerializers,optionsApiSerializers,investmentsApiSerializers
 from django.utils.html import escape
 
+@api_view(['GET'])
+def getInvestment (request):
+    investment = investments.objects.all().order_by('-timeStamp')
+    serializer = investmentsApiSerializers(investment, many= True)
+    return Response(serializer.data)
 
+@api_view(['GET'])
+def getInvestment (request, pk):
+    investmentSingle = investments.objects.get(id=pk)
+    serializer = investmentsApiSerializers(investmentSingle, many= False)
+    return Response(serializer.data)
+
+
+
+
+@api_view(['GET'])
+def getOptions (request):
+    options = optionsStocks.objects.all().order_by('-timeStamp')
+    serializer = optionsApiSerializers(options, many= True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def getOptions (request, pk):
+    optionsSingle = optionsStocks.objects.get(id=pk)
+    serializer = stockApiSerializers(optionsSingle, many= False)
+    return Response(serializer.data)
+    
 @api_view(['GET'])
 def getStocks (request):
     stocks = stock.objects.all().order_by('-timeStamp')
