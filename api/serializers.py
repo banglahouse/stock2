@@ -10,7 +10,7 @@ class stockApiSerializers(serializers.ModelSerializer):
          model = stock
          fields = '__all__'
 
-class articleApiSerializers(serializers.HyperlinkedModelSerializer):
+class articleApiSerializers(serializers.ModelSerializer):
 
     
     class Meta:
