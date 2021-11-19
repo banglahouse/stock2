@@ -16,14 +16,7 @@ class articleApiSerializers(serializers.HyperlinkedModelSerializer):
     class Meta:
     
         model = articles
-        fields = (
-        'title',
-        'created_at',
-        'header_image',
-        'description',
-        'description2'
-
-    )
+        fields = '__all__'
     readonly_fields = ('url', 'header_image')
 
 class optionsApiSerializers(serializers.ModelSerializer):
